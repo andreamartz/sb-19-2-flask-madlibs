@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madlibs Form</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Madlibs</h1>
+      <!-- <form action="/story">
+        <div class="form-info">
+          <label for="place">place:</label>
+          <input type="text" placeholder="place" name="place" />
+        </div>
+
+        <label for="place">noun:</label>
+        <input type="text" placeholder="noun" name="noun" />
+        <label for="place">verb:</label>
+        <input type="text" placeholder="verb" name="verb" />
+        <label for="place">adjective:</label>
+        <input type="text" placeholder="adjective" name="adjective" />
+        <label for="place">plural_noun:</label>
+        <input type="text" placeholder="plural_noun" name="plural_noun" />
+        <button>Submit</button>
+      </form> -->
+      <form action="/story">
+        {% for prompt in prompts %}
+        <div>
+          <label for="{{ prompt }}">{{ prompt }}: </label>
+          <input type="text" placeholder="{{ prompt }}" name="{{ prompt }}" />
+        </div>
+        {% endfor %}
+        <button>Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
